@@ -1,0 +1,32 @@
+# Dependencies
+/vendor
+/node_modules
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Laravel generated files
+/storage/logs/*
+/storage/framework/*
+/bootstrap/cache/*
+
+# Public storage symlink
+/public/storage
+
+# IDE files
+/.idea
+/.vscode
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# debugbar and vite caches
+/storage/debugbar
+/public/hot
+
+# Custom local workflow directories
+/..dev
+/..publish
