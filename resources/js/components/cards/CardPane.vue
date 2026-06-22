@@ -5,6 +5,7 @@ import { show } from '@/routes/cards';
 import type { Card } from '@/types/cards/card';
 import { CreditCard } from '@lucide/vue';
 
+import DeleteButton from '@/components/cards/DeleteButton.vue';
 import moment from 'moment';
 
 type Props = {
@@ -17,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {});
 
 <template>
 
-  <div class="border p-4">
+  <div class="relative border p-4">
 
     <Link :href="show(card.id)">
 
@@ -27,19 +28,27 @@ const props = withDefaults(defineProps<Props>(), {});
 
         <h2 class="mb-1">
 
-          {{ card.Card_number.replace(/(.{4})/g, "$1 ") }}
+          {{ card.card_number.replace(/(.{4})/g, "$1 ") }}
 
         </h2>
 
         <h3>
 
-          Expires {{ moment(card.Expiration_date).fromNow() }}
+          Balance: {{ card.balance }}
 
         </h3>
+
+        <h4>
+
+          Expires {{ moment(card.expiration_date).fromNow() }}
+
+        </h4>
 
       </div>
 
     </Link>
+
+    <DeleteButton class="text-xs absolute bottom-4 right-4" :id="card.id" />
 
   </div>
 

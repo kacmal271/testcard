@@ -72,13 +72,29 @@ class CardController extends Controller
     // request validated
 
     $validated = $request->validated();
+
+    $card->update([
+      'Card_number' => $validated['Card_number'],
+      'PIN' => $validated['PIN'],
+      'Activation_date' => $validated['Activation_date'],
+      'Expiration_date' => $validated['Expiration_date'],
+      'Balance' => $validated['Balance']
+    ]);
+
+    dd($card->getAttributes());
+
+    // argument: Model | id (either is good)
+    return redirect()->route('cards.show', ['card' => $card])
+      ->with('success', "The Card has been Updated.");
   }
 
   /**
    * Remove the specified resource from storage.
    */
-  public function destroy(string $id)
+  public function destroy(Card $card)
   {
-    //
+    $card->delete();
+
+    return redirect()->route('cards.index')->with('success', 'The Card has been Deleted');
   }
 }

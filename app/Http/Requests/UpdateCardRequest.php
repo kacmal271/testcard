@@ -30,7 +30,8 @@ class UpdateCardRequest extends FormRequest
 
       'PIN' => ['required', 'string', 'size:4'],
       'Activation_date' => ['required', Rule::date()->format('Y-m-d H:i:s')],
-      'Expiration_date' => ['required', Rule::date()->format('Y-m-d')]
+      'Expiration_date' => ['required', Rule::date()->format('Y-m-d')],
+      'Balance' => ['required', 'int']
 
     ];
   }

@@ -38,7 +38,10 @@ getResults();
     <div class="mb-4 md:grid grid-cols-3 gap-4 h-full overflow-x-auto rounded-xl">
 
       <!-- {{ loop fro each card }} -->
-      <CardPane v-for="card in cards.data" :card="card" />
+      <CardPane
+        class="relative"
+        v-for="card in cards.data"
+        :card="card" />
 
     </div>
 

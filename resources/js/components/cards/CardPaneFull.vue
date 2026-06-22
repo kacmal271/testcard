@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import DeleteButton from '@/components/cards/DeleteButton.vue';
 import moment from 'moment';
 
 import { edit } from '@/routes/cards';
@@ -20,6 +21,7 @@ const pin = props.card.PIN;
 const cardNumber = props.card.Card_number.replace(/(.{4})/g, "$1 ");
 const activationDate = moment(props.card.Activation_date).format('YYYY MM DD');
 const expirationDate = moment(props.card.Expiration_date).format('YYYY MM DD hh:mm:ss A');
+const balance = props.card.formatted_balance;
 
 </script>
 
@@ -75,7 +77,19 @@ const expirationDate = moment(props.card.Expiration_date).format('YYYY MM DD hh:
 
     </div>
 
-    <div>
+    <div class="mb-4 grid w-full max-w-sm items-center gap-1.5">
+
+      <Label for="balance">Balance</Label>
+
+      <Input
+        style="box-shadow: none;"
+        id="balance"
+        type="text"
+        v-model="balance" />
+
+    </div>
+
+    <div class="inline-block space-x-2">
 
       <Link
         :href="edit(card.id)"
@@ -88,6 +102,8 @@ const expirationDate = moment(props.card.Expiration_date).format('YYYY MM DD hh:
         </Button>
 
       </Link>
+
+      <DeleteButton :id="card.id" />
 
     </div>
 

@@ -528,10 +528,10 @@ update.patch = (args: { card: number | { id: number } } | [card: number | { id: 
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\CardController::destroy
- * @see app/Http/Controllers/CardController.php:80
+ * @see app/Http/Controllers/CardController.php:94
  * @route '/cards/{card}'
  */
-export const destroy = (args: { card: string | number } | [card: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -543,14 +543,17 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\CardController::destroy
- * @see app/Http/Controllers/CardController.php:80
+ * @see app/Http/Controllers/CardController.php:94
  * @route '/cards/{card}'
  */
-destroy.url = (args: { card: string | number } | [card: string | number ] | string | number, options?: RouteQueryOptions) => {
+destroy.url = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { card: args }
     }
 
+            if (typeof args === 'object' && !Array.isArray(args) && 'id' in args) {
+            args = { card: args.id }
+        }
     
     if (Array.isArray(args)) {
         args = {
@@ -561,7 +564,9 @@ destroy.url = (args: { card: string | number } | [card: string | number ] | stri
     args = applyUrlDefaults(args)
 
     const parsedArgs = {
-                        card: args.card,
+                        card: typeof args.card === 'object'
+                ? args.card.id
+                : args.card,
                 }
 
     return destroy.definition.url
@@ -571,20 +576,20 @@ destroy.url = (args: { card: string | number } | [card: string | number ] | stri
 
 /**
 * @see \App\Http\Controllers\CardController::destroy
- * @see app/Http/Controllers/CardController.php:80
+ * @see app/Http/Controllers/CardController.php:94
  * @route '/cards/{card}'
  */
-destroy.delete = (args: { card: string | number } | [card: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
 
     /**
 * @see \App\Http\Controllers\CardController::destroy
- * @see app/Http/Controllers/CardController.php:80
+ * @see app/Http/Controllers/CardController.php:94
  * @route '/cards/{card}'
  */
-    const destroyForm = (args: { card: string | number } | [card: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -596,10 +601,10 @@ destroy.delete = (args: { card: string | number } | [card: string | number ] | s
 
             /**
 * @see \App\Http\Controllers\CardController::destroy
- * @see app/Http/Controllers/CardController.php:80
+ * @see app/Http/Controllers/CardController.php:94
  * @route '/cards/{card}'
  */
-        destroyForm.delete = (args: { card: string | number } | [card: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',

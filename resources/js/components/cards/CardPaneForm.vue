@@ -26,29 +26,33 @@ const isUpdate = !!props.card;
 
 const form = useForm({
 
-  Card_number: props.card
-    ? props.card.Card_number.replace(/(.{4})/g, "$1 ")
+  card_number: props.card
+    ? props.card.card_number.replace(/(.{4})/g, "$1 ")
     : '',
 
-  PIN: props.card?.PIN ?? '',
+  pin: props.card?.pin ?? '',
 
 
-  Activation_date: props.card?.Activation_date
+  activation_date: props.card?.activation_date
     ? parseDate(
-        moment(props.card.Activation_date).format('YYYY-MM-DD')
+        moment(props.card.activation_date).format('YYYY-MM-DD')
       )
     : undefined,
 
-  Activation_time: props.card?.Activation_date
-    ? moment(props.card.Activation_date).format('HH:mm')
+  activation_time: props.card?.activation_date
+    ? moment(props.card.activation_date).format('HH:mm')
     : '',
 
 
-  Expiration_date: props.card?.Expiration_date
+  expiration_date: props.card?.expiration_date
     ? parseDate(
-        moment(props.card.Expiration_date).format('YYYY-MM-DD')
+        moment(props.card.expiration_date).format('YYYY-MM-DD')
       )
     : undefined,
+
+  // we need to call it "Balance"
+  // Laravel will use Setter "Balance" -> database
+  balance: props.card?.balance ?? 0,
 
 });
 
@@ -68,7 +72,10 @@ const handleSubmit = () => {
       `${data.Activation_date?.toString()} ${data.Activation_time}:00`,
 
     Expiration_date:
-      `${data.Expiration_date?.toString()}`
+      `${data.Expiration_date?.toString()}`,
+
+    // balance after user modifications
+    Balance: data.Balance,
 
   }));
 
@@ -102,7 +109,8 @@ const handleSubmit = () => {
           placeholder="1234 5678 9012 3456 7890"
           id="card_number"
           type="text"
-          v-model="form.Card_number" />
+          v-model="form.Card_number"
+          required />
         
         <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Card_number">{{ form.errors.Card_number }}</div>
 
@@ -116,7 +124,8 @@ const handleSubmit = () => {
           placeholder="1234"
           id="pin"
           type="text"
-          v-model="form.PIN" />
+          v-model="form.PIN"
+          required />
         
         <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.PIN">{{ form.errors.PIN }}</div>
 
@@ -128,11 +137,13 @@ const handleSubmit = () => {
 
         <DatePicker
           id="activation_date"
-          v-model="form.Activation_date" />
+          v-model="form.Activation_date"
+          required />
 
         <Input
           type="time"
-          v-model="form.Activation_time" />
+          v-model="form.Activation_time"
+          required />
         
         <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Activation_date">{{ form.errors.Activation_date }}</div>
 
@@ -144,9 +155,26 @@ const handleSubmit = () => {
 
         <DatePicker
           id="expiration_date"
-          v-model="form.Expiration_date" />
+          v-model="form.Expiration_date"
+          required />
         
         <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Expiration_date">{{ form.errors.Expiration_date }}</div>
+
+      </div>
+
+      <div class="mb-4 grid w-full max-w-sm items-center gap-1.5">
+
+        <Label for="balance">Balance</Label>
+
+        <Input
+          placeholder="100.00"
+          id="balance"
+          type="number"
+          v-model="form.Balance"
+          step="any"
+          required />
+        
+        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Balance">{{ form.errors.Balance }}</div>
 
       </div>
 

@@ -11,13 +11,15 @@ return new class extends Migration
    */
   public function up(): void
   {
-    Schema::create('cards', function (Blueprint $table) {
+    Schema::create('cards', function (Blueprint $table)
+    {
       $table->id();
       $table->timestamps();
-      $table->string('Card_number', length: 20)->nullable(false)->unique();
-      $table->string('PIN', length: 4)->nullable(false);
-      $table->dateTimeTz('Activation_date')->nullable(false);
-      $table->dateTimeTz('Expiration_date')->nullable(false);
+      $table->string('card_number', length: 20)->nullable(false)->unique();
+      $table->string('pin', length: 4)->nullable(false);
+      $table->dateTimeTz('activation_date')->nullable(false);
+      $table->dateTimeTz('expiration_date')->nullable(false);
+      $table->bigInteger('balance')->nullable(false);
     });
   }
 

@@ -20,10 +20,11 @@ class CardFactory extends Factory
   public function definition(): array
   {
     return [
-      'Card_number' => $this->generateUnique(),
-      'PIN' => fake()->regexify('[0-9]{4}'),
-      'Activation_date' => fake()->dateTimeBetween(now(), now()->addWeek()),
-      'Expiration_date' => fake()->dateTimeBetween(now()->addWeek(), now()->addMonth()),
+      'card_number' => $this->generateUnique(),
+      'pin' => fake()->regexify('[0-9]{4}'),
+      'activation_date' => fake()->dateTimeBetween(now(), now()->addWeek()),
+      'expiration_date' => fake()->dateTimeBetween(now()->addWeek(), now()->addMonth()),
+      'balance' => rand(0, 99999)
     ];
   }
 
@@ -36,9 +37,11 @@ class CardFactory extends Factory
     $randomNumber = fake()->regexify('[0-9]{20}');
 
     // https://laravel.com/docs/13.x/collections#method-contains
-    while ($cards->contains(function (Card $card, int $key) use ($randomNumber) {
-      return $card->Card_number == $randomNumber;
-    })) {
+    while ($cards->contains(function (Card $card, int $key) use ($randomNumber)
+    {
+      return $card->card_number == $randomNumber;
+    }))
+    {
       $randomNumber = fake()->regexify('[0-9]{20}');
     }
 
