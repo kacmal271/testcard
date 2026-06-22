@@ -1,6 +1,8 @@
+import CardController from './CardController'
 import Settings from './Settings'
 const Controllers = {
-    Settings: Object.assign(Settings, Settings),
+    CardController: Object.assign(CardController, CardController),
+Settings: Object.assign(Settings, Settings),
 }
 
 export default Controllers
