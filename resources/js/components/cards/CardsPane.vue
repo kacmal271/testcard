@@ -14,8 +14,6 @@ type Props = {
 
 const props = withDefaults(defineProps<Props>(), {});
 
-const laravelData = ref({});
-
 console.log("CardsPane.vue");
 console.log(props.cards);
 

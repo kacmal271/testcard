@@ -64,18 +64,18 @@ const handleSubmit = () => {
 
   form.transform((data) => ({
 
-    Card_number: data.Card_number?.replace(/\s+/g, ''),
+    card_number: data.card_number?.replace(/\s+/g, ''),
 
-    PIN: data.PIN,
+    pin: data.pin,
 
-    Activation_date:
-      `${data.Activation_date?.toString()} ${data.Activation_time}:00`,
+    activation_date:
+      `${data.activation_date?.toString()} ${data.activation_time}:00`,
 
-    Expiration_date:
-      `${data.Expiration_date?.toString()}`,
+    expiration_date:
+      `${data.expiration_date?.toString()}`,
 
     // balance after user modifications
-    Balance: data.Balance,
+    balance: data.balance,
 
   }));
 
@@ -109,10 +109,10 @@ const handleSubmit = () => {
           placeholder="1234 5678 9012 3456 7890"
           id="card_number"
           type="text"
-          v-model="form.Card_number"
+          v-model="form.card_number"
           required />
         
-        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Card_number">{{ form.errors.Card_number }}</div>
+        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.card_number">{{ form.errors.card_number }}</div>
 
       </div>
 
@@ -124,10 +124,10 @@ const handleSubmit = () => {
           placeholder="1234"
           id="pin"
           type="text"
-          v-model="form.PIN"
+          v-model="form.pin"
           required />
         
-        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.PIN">{{ form.errors.PIN }}</div>
+        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.pin">{{ form.errors.pin }}</div>
 
       </div>
 
@@ -137,15 +137,15 @@ const handleSubmit = () => {
 
         <DatePicker
           id="activation_date"
-          v-model="form.Activation_date"
+          v-model="form.activation_date"
           required />
 
         <Input
           type="time"
-          v-model="form.Activation_time"
+          v-model="form.activation_time"
           required />
         
-        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Activation_date">{{ form.errors.Activation_date }}</div>
+        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.activation_date">{{ form.errors.activation_date }}</div>
 
       </div>
 
@@ -155,10 +155,10 @@ const handleSubmit = () => {
 
         <DatePicker
           id="expiration_date"
-          v-model="form.Expiration_date"
+          v-model="form.expiration_date"
           required />
         
-        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Expiration_date">{{ form.errors.Expiration_date }}</div>
+        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.expiration_date">{{ form.errors.expiration_date }}</div>
 
       </div>
 
@@ -170,11 +170,11 @@ const handleSubmit = () => {
           placeholder="100.00"
           id="balance"
           type="number"
-          v-model="form.Balance"
+          v-model="form.balance"
           step="any"
           required />
         
-        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.Balance">{{ form.errors.Balance }}</div>
+        <div class="text-(--destructive) bg-(--destructive-foreground)" v-if="form.errors.balance">{{ form.errors.balance }}</div>
 
       </div>
 

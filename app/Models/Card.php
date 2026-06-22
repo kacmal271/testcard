@@ -49,7 +49,7 @@ class Card extends Model
   {
     return Attribute::make(
       get: fn($value) => (float) $value / 100,
-      set: fn($value) => (int) ($value * 100)
+      set: fn($value) => (int) round($value * 100)
     );
   }
 }

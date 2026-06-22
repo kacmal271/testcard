@@ -25,13 +25,13 @@ class UpdateCardRequest extends FormRequest
   {
     return [
 
-      // Card_number unique: not when updating
-      'Card_number' => ['required', 'string', 'size:20'],
+      // card_number unique: not when updating
+      'card_number' => ['required', 'string', 'size:20'],
 
-      'PIN' => ['required', 'string', 'size:4'],
-      'Activation_date' => ['required', Rule::date()->format('Y-m-d H:i:s')],
-      'Expiration_date' => ['required', Rule::date()->format('Y-m-d')],
-      'Balance' => ['required', 'int']
+      'pin' => ['required', 'string', 'size:4'],
+      'activation_date' => ['required', Rule::date()->format('Y-m-d H:i:s')],
+      'expiration_date' => ['required', Rule::date()->format('Y-m-d')],
+      'balance' => ['required', 'int']
 
     ];
   }

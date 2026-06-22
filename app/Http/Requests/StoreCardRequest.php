@@ -24,11 +24,11 @@ class StoreCardRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'Card_number' => ['required', 'string', 'unique:cards', 'size:20'],
-      'PIN' => ['required', 'string', 'size:4'],
-      'Activation_date' => ['required', Rule::date()->format('Y-m-d H:i:s')],
-      'Expiration_date' => ['required', Rule::date()->format('Y-m-d')],
-      'Balance' => ['required', 'int']
+      'card_number' => ['required', 'string', 'unique:cards', 'size:20'],
+      'pin' => ['required', 'string', 'size:4'],
+      'activation_date' => ['required', Rule::date()->format('Y-m-d H:i:s')],
+      'expiration_date' => ['required', Rule::date()->format('Y-m-d')],
+      'balance' => ['required', 'int']
     ];
   }
 }

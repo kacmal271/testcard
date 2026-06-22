@@ -17,11 +17,11 @@ type Props = {
 
 const props = withDefaults(defineProps<Props>(), {});
 
-const pin = props.card.PIN;
-const cardNumber = props.card.Card_number.replace(/(.{4})/g, "$1 ");
-const activationDate = moment(props.card.Activation_date).format('YYYY MM DD');
-const expirationDate = moment(props.card.Expiration_date).format('YYYY MM DD hh:mm:ss A');
-const balance = props.card.formatted_balance;
+const pin = props.card.pin;
+const cardNumber = props.card.card_number.replace(/(.{4})/g, "$1 ");
+const activationDate = moment(props.card.activation_date).format('YYYY MM DD');
+const expirationDate = moment(props.card.expiration_date).format('YYYY MM DD hh:mm:ss A');
+const balance = props.card.balance;
 
 </script>
 

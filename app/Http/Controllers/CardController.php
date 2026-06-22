@@ -15,6 +15,7 @@ class CardController extends Controller
    */
   public function index()
   {
+
     $cards = Card::paginate(15);
 
     return Inertia::render('cards/Index', [
@@ -74,14 +75,12 @@ class CardController extends Controller
     $validated = $request->validated();
 
     $card->update([
-      'Card_number' => $validated['Card_number'],
-      'PIN' => $validated['PIN'],
-      'Activation_date' => $validated['Activation_date'],
-      'Expiration_date' => $validated['Expiration_date'],
-      'Balance' => $validated['Balance']
+      'card_number' => $validated['card_number'],
+      'pin' => $validated['pin'],
+      'activation_date' => $validated['activation_date'],
+      'expiration_date' => $validated['expiration_date'],
+      'balance' => $validated['balance']
     ]);
-
-    dd($card->getAttributes());
 
     // argument: Model | id (either is good)
     return redirect()->route('cards.show', ['card' => $card])
