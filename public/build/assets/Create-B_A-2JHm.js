@@ -1,0 +1,1 @@
+import{R as e,w as t,y as n}from"./dist-BGoiSky9.js";import{t as r}from"./CardPaneForm-DV72jPU9.js";var i=t({__name:`Create`,setup(t){return(t,i)=>(e(),n(r,{card:null}))}});export{i as default};

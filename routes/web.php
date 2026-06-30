@@ -4,14 +4,19 @@ use App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 
-// redirect: guest
-Route::redirect('/', '/login')->middleware(['guest']);
+Route::middleware(['guest'])->group(function () {
+
+    Route::redirect('/', '/login');
+
+});
 
 Route::middleware(['auth'])->group(function ()
 {
 
   // redirect: logged user
-  Route::redirect('/', '/cards');
+  Route::get('/', function () {
+    return redirect()->route('cards.index');
+	});
 
   // Route::resource
   //// index
@@ -30,6 +35,7 @@ Route::middleware(['auth'])->group(function ()
   ////// DELETE -> MySQL
 
   Route::resource('cards', Controllers\CardController::class);
+	
 });
 
 require __DIR__ . '/settings.php';

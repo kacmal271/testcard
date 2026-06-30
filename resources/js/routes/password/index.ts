@@ -3,7 +3,7 @@ import confirmD7e05f from './confirm'
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
 export const confirm = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: confirm.url(options),
@@ -12,13 +12,13 @@ export const confirm = (options?: RouteQueryOptions): RouteDefinition<'get'> => 
 
 confirm.definition = {
     methods: ["get","head"],
-    url: '/user/confirm-password',
+    url: '/testcard/user/confirm-password',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
 confirm.url = (options?: RouteQueryOptions) => {
     return confirm.definition.url + queryParams(options)
@@ -27,7 +27,7 @@ confirm.url = (options?: RouteQueryOptions) => {
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
 confirm.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: confirm.url(options),
@@ -36,7 +36,7 @@ confirm.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
 confirm.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: confirm.url(options),
@@ -46,7 +46,7 @@ confirm.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
     const confirmForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: confirm.url(options),
@@ -56,7 +56,7 @@ confirm.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
         confirmForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: confirm.url(options),
@@ -65,7 +65,7 @@ confirm.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmablePasswordController::confirm
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmablePasswordController.php:40
- * @route '/user/confirm-password'
+ * @route '/testcard/user/confirm-password'
  */
         confirmForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: confirm.url({
@@ -81,7 +81,7 @@ confirm.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
 export const confirmation = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: confirmation.url(options),
@@ -90,13 +90,13 @@ export const confirmation = (options?: RouteQueryOptions): RouteDefinition<'get'
 
 confirmation.definition = {
     methods: ["get","head"],
-    url: '/user/confirmed-password-status',
+    url: '/testcard/user/confirmed-password-status',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
 confirmation.url = (options?: RouteQueryOptions) => {
     return confirmation.definition.url + queryParams(options)
@@ -105,7 +105,7 @@ confirmation.url = (options?: RouteQueryOptions) => {
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
 confirmation.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: confirmation.url(options),
@@ -114,7 +114,7 @@ confirmation.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
 confirmation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: confirmation.url(options),
@@ -124,7 +124,7 @@ confirmation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
     const confirmationForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: confirmation.url(options),
@@ -134,7 +134,7 @@ confirmation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
         confirmationForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: confirmation.url(options),
@@ -143,7 +143,7 @@ confirmation.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
- * @route '/user/confirmed-password-status'
+ * @route '/testcard/user/confirmed-password-status'
  */
         confirmationForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: confirmation.url({

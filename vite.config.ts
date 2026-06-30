@@ -10,6 +10,8 @@ import { bunny } from 'laravel-vite-plugin/fonts';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	
+	base: '/testcard/build/',
 
   resolve: {
 

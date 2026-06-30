@@ -1,0 +1,1 @@
+import{R as e,w as t,y as n}from"./dist-BGoiSky9.js";import{t as r}from"./CardPaneForm-DV72jPU9.js";var i=t({__name:`Edit`,props:{card:{}},setup(t){let i=t;return console.log(`Edit.vue`),console.log(i.card),(i,a)=>(e(),n(r,{card:t.card},null,8,[`card`]))}});export{i as default};

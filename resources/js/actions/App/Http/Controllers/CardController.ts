@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/cards',
+    url: '/testcard/cards',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: index.url(options),
@@ -55,7 +55,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url(options),
@@ -64,7 +64,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\CardController::index
  * @see app/Http/Controllers/CardController.php:16
- * @route '/cards'
+ * @route '/testcard/cards'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url({
@@ -80,7 +80,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -89,13 +89,13 @@ export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => (
 
 create.definition = {
     methods: ["get","head"],
-    url: '/cards/create',
+    url: '/testcard/cards/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
 create.url = (options?: RouteQueryOptions) => {
     return create.definition.url + queryParams(options)
@@ -104,7 +104,7 @@ create.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -113,7 +113,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: create.url(options),
@@ -123,7 +123,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
     const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: create.url(options),
@@ -133,7 +133,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
         createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url(options),
@@ -142,7 +142,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\CardController::create
  * @see app/Http/Controllers/CardController.php:39
- * @route '/cards/create'
+ * @route '/testcard/cards/create'
  */
         createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url({
@@ -158,7 +158,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\CardController::store
  * @see app/Http/Controllers/CardController.php:47
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -167,13 +167,13 @@ export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 store.definition = {
     methods: ["post"],
-    url: '/cards',
+    url: '/testcard/cards',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\CardController::store
  * @see app/Http/Controllers/CardController.php:47
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 store.url = (options?: RouteQueryOptions) => {
     return store.definition.url + queryParams(options)
@@ -182,7 +182,7 @@ store.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\CardController::store
  * @see app/Http/Controllers/CardController.php:47
- * @route '/cards'
+ * @route '/testcard/cards'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -192,7 +192,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     /**
 * @see \App\Http\Controllers\CardController::store
  * @see app/Http/Controllers/CardController.php:47
- * @route '/cards'
+ * @route '/testcard/cards'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: store.url(options),
@@ -202,7 +202,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
             /**
 * @see \App\Http\Controllers\CardController::store
  * @see app/Http/Controllers/CardController.php:47
- * @route '/cards'
+ * @route '/testcard/cards'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: store.url(options),
@@ -213,24 +213,24 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-export const show = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const show = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
 
 show.definition = {
     methods: ["get","head"],
-    url: '/cards/{card}',
+    url: '/testcard/cards/{card}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-show.url = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+show.url = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { card: args }
     }
@@ -261,18 +261,18 @@ show.url = (args: { card: number | { id: number } } | [card: number | { id: numb
 /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-show.get = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+show.get = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: show.url(args, options),
     method: 'get',
 })
 /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-show.head = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+show.head = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: show.url(args, options),
     method: 'head',
 })
@@ -280,9 +280,9 @@ show.head = (args: { card: number | { id: number } } | [card: number | { id: num
     /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-    const showForm = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const showForm = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: show.url(args, options),
         method: 'get',
     })
@@ -290,18 +290,18 @@ show.head = (args: { card: number | { id: number } } | [card: number | { id: num
             /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-        showForm.get = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.get = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, options),
             method: 'get',
         })
             /**
 * @see \App\Http\Controllers\CardController::show
  * @see app/Http/Controllers/CardController.php:29
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-        showForm.head = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        showForm.head = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: show.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -315,24 +315,24 @@ show.head = (args: { card: number | { id: number } } | [card: number | { id: num
 /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-export const edit = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const edit = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
 
 edit.definition = {
     methods: ["get","head"],
-    url: '/cards/{card}/edit',
+    url: '/testcard/cards/{card}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-edit.url = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+edit.url = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { card: args }
     }
@@ -363,18 +363,18 @@ edit.url = (args: { card: number | { id: number } } | [card: number | { id: numb
 /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-edit.get = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+edit.get = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
     method: 'get',
 })
 /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-edit.head = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+edit.head = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
     method: 'head',
 })
@@ -382,9 +382,9 @@ edit.head = (args: { card: number | { id: number } } | [card: number | { id: num
     /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-    const editForm = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const editForm = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
         method: 'get',
     })
@@ -392,18 +392,18 @@ edit.head = (args: { card: number | { id: number } } | [card: number | { id: num
             /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-        editForm.get = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.get = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
             method: 'get',
         })
             /**
 * @see \App\Http\Controllers\CardController::edit
  * @see app/Http/Controllers/CardController.php:61
- * @route '/cards/{card}/edit'
+ * @route '/testcard/cards/{card}/edit'
  */
-        editForm.head = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        editForm.head = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -417,24 +417,24 @@ edit.head = (args: { card: number | { id: number } } | [card: number | { id: num
 /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-export const update = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+export const update = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
 
 update.definition = {
     methods: ["put","patch"],
-    url: '/cards/{card}',
+    url: '/testcard/cards/{card}',
 } satisfies RouteDefinition<["put","patch"]>
 
 /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-update.url = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+update.url = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { card: args }
     }
@@ -465,18 +465,18 @@ update.url = (args: { card: number | { id: number } } | [card: number | { id: nu
 /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-update.put = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+update.put = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
     method: 'put',
 })
 /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-update.patch = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
+update.patch = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
     url: update.url(args, options),
     method: 'patch',
 })
@@ -484,9 +484,9 @@ update.patch = (args: { card: number | { id: number } } | [card: number | { id: 
     /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-    const updateForm = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const updateForm = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'PUT',
@@ -499,9 +499,9 @@ update.patch = (args: { card: number | { id: number } } | [card: number | { id: 
             /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-        updateForm.put = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.put = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PUT',
@@ -513,9 +513,9 @@ update.patch = (args: { card: number | { id: number } } | [card: number | { id: 
             /**
 * @see \App\Http\Controllers\CardController::update
  * @see app/Http/Controllers/CardController.php:71
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-        updateForm.patch = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        updateForm.patch = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'PATCH',
@@ -529,24 +529,24 @@ update.patch = (args: { card: number | { id: number } } | [card: number | { id: 
 /**
 * @see \App\Http\Controllers\CardController::destroy
  * @see app/Http/Controllers/CardController.php:93
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-export const destroy = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+export const destroy = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
 
 destroy.definition = {
     methods: ["delete"],
-    url: '/cards/{card}',
+    url: '/testcard/cards/{card}',
 } satisfies RouteDefinition<["delete"]>
 
 /**
 * @see \App\Http\Controllers\CardController::destroy
  * @see app/Http/Controllers/CardController.php:93
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-destroy.url = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+destroy.url = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { card: args }
     }
@@ -577,9 +577,9 @@ destroy.url = (args: { card: number | { id: number } } | [card: number | { id: n
 /**
 * @see \App\Http\Controllers\CardController::destroy
  * @see app/Http/Controllers/CardController.php:93
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-destroy.delete = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+destroy.delete = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
@@ -587,9 +587,9 @@ destroy.delete = (args: { card: number | { id: number } } | [card: number | { id
     /**
 * @see \App\Http\Controllers\CardController::destroy
  * @see app/Http/Controllers/CardController.php:93
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-    const destroyForm = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    const destroyForm = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
                     [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                         _method: 'DELETE',
@@ -602,9 +602,9 @@ destroy.delete = (args: { card: number | { id: number } } | [card: number | { id
             /**
 * @see \App\Http\Controllers\CardController::destroy
  * @see app/Http/Controllers/CardController.php:93
- * @route '/cards/{card}'
+ * @route '/testcard/cards/{card}'
  */
-        destroyForm.delete = (args: { card: number | { id: number } } | [card: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        destroyForm.delete = (args: { card: string | number | { id: string | number } } | [card: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'DELETE',
