@@ -16,7 +16,7 @@ const handleDelete = () => {
     return;
   }
 
-  router.delete(`/cards/${props.id}`);
+  router.delete(`/testcard/cards/${props.id}`);
 
 };
 

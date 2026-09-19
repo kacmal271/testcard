@@ -82,11 +82,11 @@ const handleSubmit = () => {
 
   if (isUpdate) {
 
-    form.put(`/cards/${props.card?.id}`);
+    form.put(`/testcard/cards/${props.card?.id}`);
 
   } else {
 
-    form.post('/cards');
+    form.post('/testcard/cards');
 
   }
 
