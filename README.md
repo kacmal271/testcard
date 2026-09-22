@@ -72,11 +72,8 @@ If we go back to the Index View we will see in the top left corner a [Create] bu
 
 It feels like the right moment to talk about the validation functionalities of the application. We have to understand that a user should be "assumed guilty until proven innocent" since nothing stops an unaware user from inputting letters into a card number field that expects digits and optional spaces.
 
-<p align=center>
-
-  1 | 2
-  :---: | :---:
-
-</p>
+<img target="_blank" src="./..README/view_card_create_validation_client.jpg" /> | <img target="_blank" src="./..README/view_card_create_validation_server.jpg" />
+:---: | :---:
+<i>Client-Side Validation</i> | <i>Server-Side Validation</i>
 
 Here we can see a crucial distinction between a client-side vs server-side validation. In the former we can optimize user request processing with respect to handling the errors before they are sent to us over the internet. However, this method is fallible as a tech-savvy user can disable the browser security measures. In the latter example we perform the data processing on the web server and return error messages to the user if such errors should occur.
