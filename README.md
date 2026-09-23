@@ -4,6 +4,14 @@
 
 <h1>This project is a solution to a problem of: how to build a CRUD application</h1>
 
+1. [ What the views/pages look like & how to use them ](#views)
+2. [ Database Design & Data Validation ](#database)
+
+<!--
+  - views
+  -->
+
+<a name="views"></a>
 <h2>What the views/pages look like & how to use them</h2>
 
 <h3>Login View</h3>
@@ -78,6 +86,11 @@ It feels like the right moment to talk about the validation functionalities of t
 
 Here we can see a crucial distinction between a client-side vs server-side validation. In the former we can optimize user request processing with respect to handling the errors before they are sent to us over the internet. However, this method is fallible as a tech-savvy user can disable the browser security measures. In the latter example we perform the data processing on the web server and return error messages to the user if such errors should occur.
 
+<!--
+  - database
+  -->
+
+<a name="database"></a>
 <h2>Database Design & Data Validation</h2>
 
 Here's a description of the database `cards` table:
