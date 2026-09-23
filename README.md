@@ -70,7 +70,7 @@ Let me just add one more interesting fact about the CRUD applications. And it is
 
 If we go back to the Index View we will see in the top left corner a [Create] button that redirects to this page. <br />
 
-It feels like the right moment to talk about the validation functionalities of the application. We have to understand that a user should be "assumed guilty until proven innocent" since nothing stops an unaware user from inputting letters into a card number field that expects digits and optional spaces.
+It feels like the right moment to talk about the validation functionalities of the application. We have to understand that a user should be "assumed guilty until proven innocent" since nothing stops us from inputting letters into a card number field that expects digits and optional spaces.
 
 <img target="_blank" src="./..README/view_card_create_validation_client.jpg" /> | <img target="_blank" src="./..README/view_card_create_validation_server.jpg" />
 :---: | :---:
