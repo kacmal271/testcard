@@ -77,3 +77,21 @@ It feels like the right moment to talk about the validation functionalities of t
 <i>Client-Side Validation</i> | <i>Server-Side Validation</i>
 
 Here we can see a crucial distinction between a client-side vs server-side validation. In the former we can optimize user request processing with respect to handling the errors before they are sent to us over the internet. However, this method is fallible as a tech-savvy user can disable the browser security measures. In the latter example we perform the data processing on the web server and return error messages to the user if such errors should occur.
+
+<h2>Database Design & Data Validation</h2>
+
+Here's a description of the database table: `cards`
+
+Field Name | Type | Description
+--- | --- | ---
+id | big integer | The `id` attribute is primarily used by the application internally. It is used for things like: relations or sorting. It is worth noting that the PHP framework used in this project constrains this field to be unique across the whole set of rows and also to auto-increment its value when a new record is added. We actually don't even have to know it exists when adding something to the table.
+card_number | string (max 20 chars) | This is a 20 characters number displayed on the card's face. It is also unique just like the `id` and is a potential candidate for a primary key attribute. However, it was decided otherwise because of the application's framework naming conventions that expect the "id" field name. <br />
+It is worth noticing how distinct the data storage and data presentation are. We reserve 20 characters in the database but display them later interlaced with additional spaces to make the number more readable.
+pin | string (max 4 chars) | What can be added to both this and the `card_number` attributes is that they both have a max character limit but there is no simple possibility to set the min count. The limit is actually imposed by the PHP framework called Laravel and what I assume happens is that it multiplies the actual count of characters we want times the number of bytes one character requires in the database/table -specific encoding. Long story short, most of the data storage logic is delegated to Laravel just as the min characters count per attribute.
+activation_date | datetime | This is another mind-boggling datatype with respect to how database-server types are mapped. What I can tell you is that the framework once again does the heavy-lifting and stores information without the timezone overhead, manipulating the representation after it is read from the database.
+expiration_date | datetime | What can also be added to both the `datetime` attributes is that they support much larger date and time range compared to the `timestamp` datatype which handles time zone in the database itself at but offers shorter range.
+balance | big integar | This one is pretty straightforward except for the fact of how you store the currency. A single attribute wouldn't suffice an effective implementation of localization but this project doesn't worry about it. What it does resolve though is how you deal with denomination of a given currency. Say we want to set a product to 5.99$ that is -> 5 dollars and 99 cents: How can you do this? One option is to use a floating point number but that won't brings you anywhere because of floating point computation errors that happen naturally in the CPU (especially with respect to the IEEE 754 numeric representation). Another way is to store everything in the smaller denomination: so in our example the product would be 599 cents and this is the value we assign to the attribute.
+
+<h4>Data Validation</h4>
+
+Data Validation is mostly about the "required" constraint that imposes some attribute to always have a value. We can imagine that a gift card has to have a security code, the security code is therefore an attribute describing the card and it cannot be undefined. Same goes for all other attributes that the application expects from the Create View.
