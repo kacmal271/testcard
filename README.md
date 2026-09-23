@@ -113,13 +113,14 @@ Data Validation is mostly about the "required" constraint that imposes some attr
 Now for simplicity I would like to present you with a tabular overview of the validation rules for the `cards` table data field provided by the user:
 
 Field Name | Required | String | Int | Date Format | Size (exact) | Unique
---- | --- | --- | --- | --- | ---
+--- | :---: | :---: | :---: | :---: | :---: | :---:
 card_number | ✓ | ✓ |   |   | 20 | ✓/✕
 pin | ✓ | ✓ |   |   | 4 |  
-activation_date | ✓ |   | Y-m-d H:i:s | ✓ |   |  
-expiration_date | ✓ |   | Y-m-d | ✓ |   |  
+activation_date | ✓ |   | Y-m-d H:i:s <br /> (2009-10-16 21:30:45) | ✓ |   |  
+expiration_date | ✓ |   | Y-m-d <br /> (2009-10-16) | ✓ |   |  
 balance | ✓ |   | ✓ |   |   |  
 
 You can see that the `expiration_date` doesn't denote the time of the card expiration but rather just the date. The time is defaulted to 00:00:00 AM of that day and it is a system design choice. From the retrospect I strongly feel like it should be settable to a specific hour or that the application should extract the `activation_date`'s time and use it as expiration time too.
 
-Another thing that confused me with respect to how I designed the system is that the Update request doesn't validate the uniqueness of the `card_number` which is otherwise true when Creating a new record.
+Another thing that confused me with respect to how I designed the system is that the Update request doesn't validate the uniqueness of the `card_number` which is otherwise true when Creating a new record. I can't really recall why I decided to leave it like this.
+
