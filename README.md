@@ -114,7 +114,7 @@ Now for simplicity I would like to present you with a tabular overview of the va
 
 Field Name | Required | String | Int | Date Format | Size (exact) | Unique
 --- | :---: | :---: | :---: | :---: | :---: | :---:
-card_number | ✓ | ✓ |   |   | 20 | ✓/✕
+card_number | ✓ | ✓ |   |   | 20 | ✓ (Create) / ✕ (Update)
 pin | ✓ | ✓ |   |   | 4 |  
 activation_date | ✓ |   | Y-m-d H:i:s <br /> (2009-10-16 21:30:45) | ✓ |   |  
 expiration_date | ✓ |   | Y-m-d <br /> (2009-10-16) | ✓ |   |  
