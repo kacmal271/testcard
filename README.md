@@ -167,9 +167,7 @@ We can also additionally use the checksums provided separately for each listed d
 
 and then compare with the Apache Lounge provided hash.
 
-<h6>How to register out web server as a windows service?</h6>
-
-<p align=center>▼▼▼</p>
+<h6>How to register our web server as a windows service? ( ▷ ▷ ▷ )</h6>
 
 Let's first switch to the installation folder
 
@@ -199,7 +197,7 @@ By the way, here's how to uninstall the web server from being a Windows service 
 <div>
 
   ```CMD
-  httpd.exe -k uninstall
+  % httpd.exe -k uninstall
   ```
 
 </div>
@@ -226,7 +224,9 @@ And also we can verify if it's working (look for a text "RUNNING")
 
 so yeah, that should do it.
 
-<p align=center>▲▲▲</p>
+<h6 align=center>◁ ◁ ◁</h6>
+
+Now, I understand that during the local environment setup not all might go smoothly. That's true and we just have to deal with it, it is part of the uphill struggle that will one day pay off. But my point is to share with you a little problem I faced with respect to Apache and PHP configuration.
 
 <!--
   - installation
