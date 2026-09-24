@@ -144,7 +144,7 @@ Before installing the application from github we must configure our local enviro
 <a name="installation"></a>
 <h2>Installation Guide</h2>
 
-First let's recall I will be using the local environment described in the previous chapter: [ # Local Environment Setup ](#environment)
+First let's recall I will be using the local environment described in the previous chapter: [ # Local Environment Setup ](#environment) <br />
 
-
+With that out of the way, let's try cloning this repository as our local instance. <br />
 
