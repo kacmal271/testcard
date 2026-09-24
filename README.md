@@ -137,6 +137,34 @@ Before installing the application from github we must configure our local enviro
 
 <strong>It is extremely subject to change how over time the current state of open source technologies facilitate local web development but nonetheless I have decided to share a little bit of background for that which I used (2026). </strong>
 
+Initially I was considering the XAMPP package that has its benefit of unifying most common web tools but the problem is with its lack of maintainability. Last time I checked XAMPP was still stuck on PHP 8.2 lagging behind the Laravel 13 minimal requirements. It seemed natural for me to keep all the technologies separate to better understand how they work and how I can make them synergize - which seemed like a step forward toward a better understanding of the server-related networking and api challenges;
+
+Anyways, let's start off already!
+
+1. We need: PHP (8.4 or whichever version makes the standard at the time of reading)
+
+Here's a very good guide on how to get things going: https://www.php.net/downloads.php
+
+You may however want to check out the main `php.ini` file found directly in the installation folder and ask your favorite artificial intelligence chatbot to adjust it for running Laravel applications.
+
+2. Apache (2.4)
+
+The Web Server is shipped as uncompiled version for Windows. For binary executables we have to find a 3rd party specialists who offer a downloadable solution.
+
+Like this one (called "Apache Lounge"): https://www.apachelounge.com/download/
+
+There should be a compiled and zipped program download link somewhere over there ^
+
+We can also additionally use the checksums provided separately for each listed download link:
+
+<div>
+
+  ```CMD
+  certutil -hashfile &lt;filepath&gt; &lt;hashingAlgorithm&gt;
+  ```
+
+</div>
+
 <!--
   - installation
   -->
