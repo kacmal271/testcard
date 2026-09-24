@@ -6,6 +6,8 @@
 
 1. [ What the views/pages look like & how to use them ](#views)
 2. [ Database Design & Data Validation ](#database)
+3. [ Local Environment Setup ](#environment)
+4. [ Installation Guide ](#installation)
 
 <!--
   - views
@@ -123,4 +125,26 @@ balance | ✓ |   | ✓ |   |   |
 You can see that the `expiration_date` doesn't denote the time of the card expiration but rather just the date. The time is defaulted to 00:00:00 AM of that day and it is a system design choice. From the retrospect I strongly feel like it should be settable to a specific hour or that the application should extract the `activation_date`'s time and use it as expiration time too.
 
 Another thing that confused me with respect to how I designed the system is that the Update request doesn't validate the uniqueness of the `card_number` which is otherwise true when Creating a new record. I can't really recall why I decided to leave it like this.
+
+<!--
+  - environment
+  -->
+
+<a name="environment"></a>
+<h2>Local Environment Setup</h2>
+
+Before installing the application from github we must configure our local environment. <br />
+
+<strong>It is extremely subject to change how over time the current state of open source technologies facilitate local web development but nonetheless I have decided to share a little bit of background for that which I used (2026). </strong>
+
+<!--
+  - installation
+  -->
+
+<a name="installation"></a>
+<h2>Installation Guide</h2>
+
+First let's recall I will be using the local environment described in the previous chapter: [ # Local Environment Setup ](#environment)
+
+
 
