@@ -155,15 +155,78 @@ Like this one (called "Apache Lounge"): https://www.apachelounge.com/download/
 
 There should be a compiled and zipped program download link somewhere over there ^
 
-We can also additionally use the checksums provided separately for each listed download link:
+We can also additionally use the checksums provided separately for each listed download link. Simply hash the downloaded file with the following:
 
 <div>
 
   ```CMD
-  certutil -hashfile &lt;filepath&gt; &lt;hashingAlgorithm&gt;
+  certutil -hashfile <filepath> <hashingAlgorithm>
   ```
 
 </div>
+
+and then compare with the Apache Lounge provided hash.
+
+<h6>How to register out web server as a windows service?</h6>
+
+<p align=center>▼▼▼</p>
+
+Let's first switch to the installation folder
+
+<div>
+
+  ```CMD
+  %% remember to change your path
+  cd C:\_soft\apache\apache_2.4.63\bin
+  ```
+
+</div>
+
+Here should lie the `httpd.exe` that we can register as a Windows Service running a built-in installation script. <br />
+Notice (!) Remember to change your service name
+Notice (!) This is the name we will be using to start the server
+
+<div>
+
+  ```CMD
+  httpd.exe -k install "apache24"
+  ```
+
+</div>
+
+By the way, here's how to uninstall the web server from being a Windows service (in case you need it in the future)
+
+<div>
+
+  ```CMD
+  httpd.exe -k uninstall
+  ```
+
+</div>
+
+Now let's try to run it
+
+<div>
+
+  ```CMD
+  net start apache24
+  ```
+
+</div>
+
+And also we can verify if it's working (look for a text "RUNNING")
+
+<div>
+
+  ```CMD
+  sc query apache24
+  ```
+
+</div>
+
+so yeah, that should do it.
+
+<p align=center>▲▲▲</p>
 
 <!--
   - installation
