@@ -137,7 +137,7 @@ Before installing the application from github we must configure our local enviro
 
 <strong>It is extremely subject to change how over time the current state of open source technologies facilitate local web development but nonetheless I have decided to share a little bit of background for that which I used (2026). </strong>
 
-Initially I was considering the XAMPP package that has its benefit of unifying most common web tools but the problem is with its lack of maintainability. Last time I checked XAMPP was still stuck on PHP 8.2 lagging behind the Laravel 13 minimal requirements. It seemed natural for me to keep all the technologies separate to better understand how they work and how I can make them synergize - which seemed like a step forward toward a better understanding of the server-related networking and api challenges;
+Initially I was considering the XAMPP package that has its benefit of unifying most common web tools but the problem is with its lack of maintainability. Last time I checked XAMPP was still stuck on PHP 8.2 lagging behind the Laravel 13 minimal requirements. It also seemed natural for me to keep all the technologies separate to better understand how they work and how I can make them synergize - which seemed like a step forward toward a better understanding of the server-related networking and api challenges;
 
 Anyways, let's start off already!
 
@@ -181,8 +181,8 @@ Let's first switch to the installation folder
 </div>
 
 Here should lie the `httpd.exe` that we can register as a Windows Service running a built-in installation script. <br />
-Notice (!) Remember to change your service name
-Notice (!) This is the name we will be using to start the server
+(!) Notice: Remember to change your service name <br />
+(!) Notice: This is the name we will be using to start the server
 
 <div>
 
@@ -192,7 +192,7 @@ Notice (!) This is the name we will be using to start the server
 
 </div>
 
-By the way, here's how to uninstall the web server from being a Windows service (in case you need it in the future)
+By the way, here's how to uninstall the web server from being a Windows service:
 
 <div>
 
@@ -226,7 +226,11 @@ so yeah, that should do it.
 
 <h6 align=center>◁ ◁ ◁</h6>
 
-Now, I understand that during the local environment setup not all might go smoothly. That's true and we just have to deal with it, it is part of the uphill struggle that will one day pay off. But my point is to share with you a little problem I faced with respect to Apache and PHP configuration.
+Now I understand that during the local environment setup some things may go wrong. It's natural and we just have to deal with it, it is part of the uphill struggle that will one day pay off. And so because of it I want to share with you a little problem I faced with respect to Apache and PHP configuration.
+
+<h6>The missing library problem. ( ▷ ▷ ▷ )</h6>
+
+<h6 align=center>◁ ◁ ◁</h6>
 
 <!--
   - installation
