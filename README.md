@@ -149,7 +149,7 @@ You may however want to check out the main `php.ini` file found directly in the 
 
 2. Apache (2.4)
 
-The Web Server is shipped as uncompiled version for Windows. For binary executables we have to find a 3rd party specialists who offer a downloadable solution.
+The Web Server is shipped as an uncompiled version for Windows. For binary executables we have to find a 3rd party specialists who offer a downloadable solution.
 
 Like this one (called "Apache Lounge"): https://www.apachelounge.com/download/
 
