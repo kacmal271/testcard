@@ -230,6 +230,10 @@ Now I understand that during the local environment setup some things may go wron
 
 <h6>The missing library problem. ( ▷ ▷ ▷ )</h6>
 
+The problem was actually concerning a XAMPP PHP installation or more specifically what happened after updating PHP to a newer version. The following error was being thrown: <q>procedure libssh2_session_set_read_timeout entry point not found in library C:\xampp\php\ext\php_curl.dll</q>. The solution was to copy a very specific library from the fresh php installation folder to the Apache folder. Here's a list of steps:
+
+
+
 <h6 align=center>◁ ◁ ◁</h6>
 
 <!--
