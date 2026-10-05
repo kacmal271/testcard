@@ -137,7 +137,7 @@ Before installing the application from github we must configure our local enviro
 
 <strong>It is extremely subject to change how over time the current state of open source technologies facilitate local web development but nonetheless I have decided to share a little bit of background for that which I used (2026). </strong>
 
-Initially I was considering the XAMPP package that has its benefit of unifying most common web tools but the problem is with its lack of maintainability. Last time I checked XAMPP was still stuck on PHP 8.2 lagging behind the Laravel 13 minimal requirements. It also seemed natural for me to keep all the technologies separate to better understand how they work and how I can make them synergize - which seemed like a step forward toward a better understanding of the server-related networking and api challenges;
+Initially I was considering the XAMPP package that has its benefit of unifying most common web tools but the problem was with its lack of maintainability. Last time I checked XAMPP was still stuck on PHP 8.2 lagging behind the Laravel 13 minimal requirements. It also seemed natural for me to keep all the technologies separate to better understand how they work and how I can make them synergize - which seemed like a step forward toward a better understanding of the server-related networking and api challenges;
 
 Anyways, let's start off already!
 
@@ -149,7 +149,7 @@ You may however want to check out the main `php.ini` file found directly in the 
 
 2. Apache (2.4)
 
-The Web Server is shipped as an uncompiled version for Windows. For binary executables we have to find a 3rd party specialists who offer a downloadable solution.
+The Web Server is shipped as an uncompiled version for Windows. For binary executables we have to find a 3rd party specialist who offers a downloadable solution.
 
 Like this one (called "Apache Lounge"): https://www.apachelounge.com/download/
 
@@ -230,9 +230,16 @@ Now I understand that during the local environment setup some things may go wron
 
 <h6>The missing library problem. ( ▷ ▷ ▷ )</h6>
 
-The problem was actually concerning a XAMPP PHP installation or more specifically what happened after updating PHP to a newer version. The following error was being thrown: <q>procedure libssh2_session_set_read_timeout entry point not found in library C:\xampp\php\ext\php_curl.dll</q>. The solution was to copy a very specific library from the fresh php installation folder to the Apache folder. Here's a list of steps:
+The problem was actually concerning a XAMPP PHP installation or more specifically what happened after updating PHP to a newer version. However, I believe it may happen in any installation environment since what the XAMPP package does is it just bundles the technologies together for easier process control management. They may still misbehave the same way when installed individually. <br />
+The following error was being thrown: <q>procedure libssh2_session_set_read_timeout entry point not found in library C:\xampp\php\ext\php_curl.dll</q>. The solution was to copy a very specific library from the fresh php installation folder to the Apache folder. Here's a list of steps: <br />
 
+(inside the PHP installation folder) <br />
+(1) Try searching for a `libssh2.dll` file. This is a dynamic library file, containing functions that the previous error very vaguely hinted at. Copy this file into your clipboard. <br />
 
+(inside the Apache installation folder) <br />
+(2) Rename the current `libssh2.dll` -> into `libssh2.dll.old`. Paste the file from the PHP folder. <br />
+
+And that should do the trick.
 
 <h6 align=center>◁ ◁ ◁</h6>
 
