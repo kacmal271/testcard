@@ -243,6 +243,12 @@ And that should do the trick.
 
 <h6 align=center>◁ ◁ ◁</h6>
 
+3. Composer (2.9)
+
+We can understand Composer as a project manager with respect to installing other people's code on top of our own files. It is integrated with Laravel and it is mandatory to have Composer installed on a computer to download all the necessary dependencies.
+
+4. 
+
 <!--
   - installation
   -->
